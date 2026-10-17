@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gilberto Ojeda — Software Engineer</title>
   <meta name="description"
-    content="Gilberto Ojeda — Software Engineering Student at Western Governors University. Python, Java, React, AWS, Machine Learning." />
+    content="Gilberto Ojeda — Software Engineering Student at Western Governors University. Passionate about building elegant solutions with Python, Java, React, Node.js, AWS, and more." />
   <meta name="author" content="Gilberto Ojeda" />
   <meta name="keywords"
     content="Gilberto Ojeda, Software Engineer, WGU, Python, Java, React, AWS, Machine Learning, Portfolio" />
@@ -16,250 +17,637 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="page-wrapper">
-    <main class="resume" id="main-content">
+  <!-- Particle Canvas Background -->
+  <canvas id="particle-canvas"></canvas>
 
-      <!-- ── PROFILE HEADER ── -->
-      <header class="profile" id="profile-header">
-        <img
-          src="https://api.dicebear.com/9.x/initials/svg?seed=GO&backgroundColor=f59e0b&fontColor=000000&fontSize=40"
-          alt="Gilberto Ojeda avatar"
-          class="profile-avatar"
-          id="profile-avatar"
-          width="72" height="72" />
+  <!-- Navigation -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" id="nav-logo-link">
+        <span class="logo-text">GO</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+        <li><a href="#experience" class="nav-link" id="nav-experience">Experience</a></li>
+        <li><a href="#skills" class="nav-link" id="nav-skills">Skills</a></li>
+        <li><a href="#projects" class="nav-link" id="nav-projects">Projects</a></li>
+        <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
 
-        <div class="profile-info">
-          <h1 class="profile-name" id="profile-name">Gilberto Ojeda</h1>
-          <p class="profile-title" id="profile-title">
-            Software Engineering Student at Western Governors University
-          </p>
-          <nav class="profile-links" aria-label="Profile links" id="profile-links">
-            <a href="https://github.com/chapulin" target="_blank" rel="noopener" class="profile-link" id="link-github">
-              <!-- GitHub -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-              GitHub
-            </a>
-            <span class="link-sep" aria-hidden="true">|</span>
-            <a href="https://www.linkedin.com/in/gilberto-ojeda-campos-2293a52b2/" target="_blank" rel="noopener" class="profile-link" id="link-linkedin">
-              <!-- LinkedIn -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-            <span class="link-sep" aria-hidden="true">|</span>
-            <a href="mailto:lq1569je@go.minnstate.edu" class="profile-link" id="link-email">
-              <!-- Email -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              Email
-            </a>
-          </nav>
-        </div>
-      </header>
-
-      <!-- ── ABOUT ── -->
-      <section id="about" aria-labelledby="about-heading">
-        <h2 class="section-title" id="about-heading">About</h2>
-        <p class="about-text" id="about-text">
-          Software Engineering student at WGU passionate about building clean, scalable software.
-          I enjoy working across the stack — from backend APIs and cloud infrastructure on <strong>AWS</strong>
-          to machine learning pipelines in <strong>Python</strong> and systems programming in <strong>C++</strong>.
-          Always learning, always shipping.
-        </p>
-      </section>
-
-      <!-- ── EXPERIENCE ── -->
-      <section id="experience" aria-labelledby="experience-heading">
-        <h2 class="section-title" id="experience-heading">Experience</h2>
-
-        <ul class="entry-list" role="list" id="experience-list">
-
-          <li class="entry" id="exp-wgu">
-            <div class="entry-icon entry-icon--wgu" aria-hidden="true">WGU</div>
-            <div class="entry-body">
-              <div class="entry-row">
-                <span class="entry-title">Software Engineering Student</span>
-                <span class="entry-date">2024 — Present</span>
-              </div>
-              <div class="entry-sub">
-                at <span class="entry-org">Western Governors University</span>
-              </div>
-              <p class="entry-stack">Algorithms · Data Structures · Cloud Computing · Software Design · AI/ML</p>
-            </div>
-          </li>
-
-          <li class="entry" id="exp-dev">
-            <div class="entry-icon entry-icon--dev" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <div class="entry-body">
-              <div class="entry-row">
-                <span class="entry-title">Independent Developer</span>
-                <span class="entry-date">2022 — Present</span>
-              </div>
-              <div class="entry-sub">at <span class="entry-org">Self-directed Projects</span></div>
-              <p class="entry-stack">Python · Java · React · Node.js · AWS · Docker · CI/CD</p>
-            </div>
-          </li>
-
-          <li class="entry" id="exp-oss">
-            <div class="entry-icon entry-icon--oss" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </div>
-            <div class="entry-body">
-              <div class="entry-row">
-                <span class="entry-title">Open Source Contributor</span>
-                <span class="entry-date">2023 — Present</span>
-              </div>
-              <div class="entry-sub">at <span class="entry-org">GitHub Community</span></div>
-              <p class="entry-stack">Git · Code Review · Documentation · Collaboration</p>
-            </div>
-          </li>
-
-        </ul>
-      </section>
-
-      <!-- ── PROJECTS ── -->
-      <section id="projects" aria-labelledby="projects-heading">
-        <h2 class="section-title" id="projects-heading">Projects</h2>
-
-        <ul class="entry-list" role="list" id="projects-list">
-
-          <li class="entry" id="project-sharpforge">
-            <div class="entry-icon entry-icon--project" aria-hidden="true">⚒️</div>
-            <div class="entry-body">
-              <div class="entry-row">
-                <span class="entry-title">
-                  <a href="https://github.com/chapulin/SharpForge" target="_blank" rel="noopener" class="entry-link" id="project-sharpforge-link">
-                    SharpForge
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                  </a>
-                </span>
-                <span class="entry-date">2024</span>
-              </div>
-              <p class="entry-desc" id="project-sharpforge-desc">
-                A robust ETL pipeline built with Java and Maven. Modular architecture for scalable data processing and transformation workflows.
-              </p>
-              <p class="entry-stack">Java · Maven · ETL · Data Pipeline</p>
-            </div>
-          </li>
-
-          <li class="entry" id="project-ml">
-            <div class="entry-icon entry-icon--project" aria-hidden="true">🤖</div>
-            <div class="entry-body">
-              <div class="entry-row">
-                <span class="entry-title">
-                  <a href="https://github.com/chapulin" target="_blank" rel="noopener" class="entry-link" id="project-ml-link">
-                    ML Prediction Engine
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                  </a>
-                </span>
-                <span class="entry-date">2024</span>
-              </div>
-              <p class="entry-desc" id="project-ml-desc">
-                Machine learning pipeline with classification and regression models, automated hyperparameter tuning, and performance evaluation.
-              </p>
-              <p class="entry-stack">Python · Scikit-learn · Pandas · NumPy</p>
-            </div>
-          </li>
-
-          <li class="entry" id="project-api">
-            <div class="entry-icon entry-icon--project" aria-hidden="true">🌐</div>
-            <div class="entry-body">
-              <div class="entry-row">
-                <span class="entry-title">
-                  <a href="https://github.com/chapulin" target="_blank" rel="noopener" class="entry-link" id="project-api-link">
-                    RESTful API Service
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                  </a>
-                </span>
-                <span class="entry-date">2023</span>
-              </div>
-              <p class="entry-desc" id="project-api-desc">
-                Scalable REST API on AWS with JWT auth, rate limiting, PostgreSQL integration, and a full CI/CD pipeline via GitHub Actions.
-              </p>
-              <p class="entry-stack">Node.js · AWS · PostgreSQL · Docker</p>
-            </div>
-          </li>
-
-          <li class="entry" id="project-algo">
-            <div class="entry-icon entry-icon--project" aria-hidden="true">⚡</div>
-            <div class="entry-body">
-              <div class="entry-row">
-                <span class="entry-title">
-                  <a href="https://github.com/chapulin" target="_blank" rel="noopener" class="entry-link" id="project-algo-link">
-                    Algorithms Visualizer
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
-                  </a>
-                </span>
-                <span class="entry-date">2023</span>
-              </div>
-              <p class="entry-desc" id="project-algo-desc">
-                High-performance algorithm visualizer in C++. Sorting, BFS/DFS, A* pathfinding, and dynamic programming with real-time output.
-              </p>
-              <p class="entry-stack">C++ · Algorithms · Data Structures</p>
-            </div>
-          </li>
-
-        </ul>
-      </section>
-
-      <!-- ── SKILLS ── -->
-      <section id="skills" aria-labelledby="skills-heading">
-        <h2 class="section-title" id="skills-heading">Skills</h2>
-        <div class="skills-inline" id="skills-inline">
-          <div class="skill-row" id="skill-row-languages">
-            <span class="skill-row-label">Languages</span>
-            <span class="skill-row-items">Python · Java · JavaScript / TypeScript · Go · C++</span>
-          </div>
-          <div class="skill-row" id="skill-row-frameworks">
-            <span class="skill-row-label">Frameworks</span>
-            <span class="skill-row-items">React · Node.js</span>
-          </div>
-          <div class="skill-row" id="skill-row-cloud">
-            <span class="skill-row-label">Cloud &amp; DevOps</span>
-            <span class="skill-row-items">AWS · Docker · Git / GitHub · CI/CD</span>
-          </div>
-          <div class="skill-row" id="skill-row-ai">
-            <span class="skill-row-label">ML &amp; AI</span>
-            <span class="skill-row-items">Machine Learning · NumPy · Pandas · Scikit-learn</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- ── CONTACT ── -->
-      <section id="contact" aria-labelledby="contact-heading">
-        <h2 class="section-title" id="contact-heading">Contact</h2>
-        <p class="about-text">
-          Open to opportunities, collaborations, and interesting conversations.
-        </p>
-        <div class="contact-row" id="contact-row">
-          <a href="mailto:lq1569je@go.minnstate.edu" class="contact-item" id="contact-email">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            lq1569je@go.minnstate.edu
-          </a>
-          <a href="https://www.linkedin.com/in/gilberto-ojeda-campos-2293a52b2/" target="_blank" rel="noopener" class="contact-item" id="contact-linkedin">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://github.com/chapulin" target="_blank" rel="noopener" class="contact-item" id="contact-github">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            GitHub
-          </a>
-        </div>
-      </section>
-
-    </main>
-
-    <footer class="footer" id="footer">
-      <p id="footer-copy">Gilberto Ojeda · <span id="footer-year"></span></p>
-    </footer>
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#about" class="mobile-nav-link" id="mobile-nav-about">About</a></li>
+      <li><a href="#experience" class="mobile-nav-link" id="mobile-nav-experience">Experience</a></li>
+      <li><a href="#skills" class="mobile-nav-link" id="mobile-nav-skills">Skills</a></li>
+      <li><a href="#projects" class="mobile-nav-link" id="mobile-nav-projects">Projects</a></li>
+      <li><a href="#contact" class="mobile-nav-link" id="mobile-nav-contact">Contact</a></li>
+    </ul>
   </div>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero-section" aria-label="Hero">
+      <div class="hero-content">
+        <div class="hero-badge animate-fade-up" id="hero-badge">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero-title animate-fade-up delay-1" id="hero-name">
+          Gilberto<br /><span class="hero-highlight">Ojeda</span>
+        </h1>
+        <p class="hero-subtitle animate-fade-up delay-2" id="hero-subtitle">Software Engineering Student</p>
+        <p class="hero-tagline animate-fade-up delay-2" id="hero-tagline">@ Western Governors University</p>
+        <p class="hero-description animate-fade-up delay-3" id="hero-description">
+          Building scalable software with clean code, a passion for problem-solving,
+          and an eye for systems that just <em>work</em>.
+        </p>
+        <div class="hero-cta animate-fade-up delay-4" id="hero-cta">
+          <a href="#projects" class="btn btn-primary" id="hero-btn-projects">View My Work</a>
+          <a href="#contact" class="btn btn-outline" id="hero-btn-contact">Get In Touch</a>
+        </div>
+        <div class="hero-quick-links animate-fade-up delay-5" id="hero-quick-links">
+          <button class="quick-btn" id="quick-about" onclick="scrollToSection('about')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="5" />
+              <path d="M20 21a8 8 0 1 0-16 0" />
+            </svg>
+            <span>About</span>
+          </button>
+          <button class="quick-btn" id="quick-projects" onclick="scrollToSection('projects')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8m-4-4v4" />
+            </svg>
+            <span>Projects</span>
+          </button>
+          <button class="quick-btn" id="quick-skills" onclick="scrollToSection('skills')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
+            </svg>
+            <span>Skills</span>
+          </button>
+          <button class="quick-btn" id="quick-experience" onclick="scrollToSection('experience')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" />
+              <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+            </svg>
+            <span>Experience</span>
+          </button>
+          <button class="quick-btn" id="quick-contact" onclick="scrollToSection('contact')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            <span>Contact</span>
+          </button>
+        </div>
+        <div class="hero-social animate-fade-up delay-5" id="hero-social">
+          <a href="https://github.com/chapulin" target="_blank" rel="noopener" class="social-link" id="social-github"
+            aria-label="GitHub Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/gilbertoojeda" target="_blank" rel="noopener" class="social-link"
+            id="social-linkedin" aria-label="LinkedIn Profile">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a href="mailto:lq1569je@go.minnstate.edu" class="social-link" id="social-email" aria-label="Send Email">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true">
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about-section" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">01 — About</span>
+          <h2 class="section-title" id="about-heading">Who I Am</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="about-paragraph" id="about-p1">
+              Hey! I'm <strong>Gilberto Ojeda</strong>, a Software Engineering student at
+              <strong>Western Governors University</strong>. I have a deep passion for building
+              well-engineered software that solves real problems — from backend APIs to
+              machine learning pipelines.
+            </p>
+            <p class="about-paragraph" id="about-p2">
+              I thrive at the intersection of systems thinking and creative problem-solving.
+              Whether it's architecting cloud infrastructure on <strong>AWS</strong>,
+              writing performant <strong>C++</strong> algorithms, or building intelligent
+              ML models, I love learning and shipping things that matter.
+            </p>
+            <p class="about-paragraph" id="about-p3">
+              When I'm not coding, you'll find me exploring new technologies, contributing
+              to open-source projects, or diving deep into computer science fundamentals.
+            </p>
+            <div class="about-stats" id="about-stats">
+              <div class="stat-item"><span class="stat-number">10+</span><span class="stat-label">Projects</span></div>
+              <div class="stat-item"><span class="stat-number">8+</span><span class="stat-label">Technologies</span>
+              </div>
+              <div class="stat-item"><span class="stat-number">WGU</span><span class="stat-label">Student</span></div>
+            </div>
+          </div>
+          <div class="about-visual" id="about-visual">
+            <div class="about-card glass-card">
+              <div class="about-avatar" id="about-avatar">GO</div>
+              <div class="about-info">
+                <h3>Gilberto Ojeda</h3>
+                <p>Software Engineering Student</p>
+                <p class="about-school">Western Governors University</p>
+              </div>
+              <div class="about-tags">
+                <span class="tag">Problem Solver</span>
+                <span class="tag">Systems Thinker</span>
+                <span class="tag">Open Source</span>
+                <span class="tag">Cloud Native</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section experience-section" aria-labelledby="experience-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">02 — Experience</span>
+          <h2 class="section-title" id="experience-heading">My Journey</h2>
+        </div>
+        <div class="timeline" id="experience-timeline">
+          <div class="timeline-item" id="exp-wgu">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Software Engineering Student</h3>
+                  <p class="timeline-company">Western Governors University</p>
+                </div>
+                <span class="timeline-date">2024 — Present</span>
+              </div>
+              <p class="timeline-description">
+                Pursuing a B.S. in Software Engineering with a focus on algorithms,
+                data structures, software design patterns, cloud computing, and
+                artificial intelligence. Maintaining a strong academic standing while
+                working on personal projects.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Algorithms</span>
+                <span class="tag">Software Design</span>
+                <span class="tag">Cloud Computing</span>
+                <span class="tag">AI/ML</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item" id="exp-projects">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Independent Developer</h3>
+                  <p class="timeline-company">Self-directed Projects</p>
+                </div>
+                <span class="timeline-date">2022 — Present</span>
+              </div>
+              <p class="timeline-description">
+                Architected and deployed multiple full-stack applications, ML models,
+                and CLI tools. Gained hands-on experience with AWS services (EC2, S3,
+                Lambda), containerization with Docker, and CI/CD pipelines.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">AWS</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Python</span>
+                <span class="tag">React</span>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item" id="exp-open-source">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Open Source Contributor</h3>
+                  <p class="timeline-company">GitHub Community</p>
+                </div>
+                <span class="timeline-date">2023 — Present</span>
+              </div>
+              <p class="timeline-description">
+                Actively contribute to open-source projects, submitting bug fixes,
+                features, and documentation improvements. Engaged in code reviews
+                and collaborative development workflows.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">Git</span>
+                <span class="tag">Code Review</span>
+                <span class="tag">Collaboration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills-section" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">03 — Skills</span>
+          <h2 class="section-title" id="skills-heading">Tech Stack</h2>
+        </div>
+        <div class="skills-grid" id="skills-grid">
+          <div class="skill-category glass-card" id="skill-languages">
+            <div class="skill-category-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+              <h3>Languages</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-item" id="skill-python"><span class="skill-icon">🐍</span><span
+                  class="skill-name">Python</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--fill: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item" id="skill-java"><span class="skill-icon">☕</span><span
+                  class="skill-name">Java</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--fill: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item" id="skill-javascript"><span class="skill-icon">📜</span><span
+                  class="skill-name">JavaScript / TypeScript</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--fill: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item" id="skill-go"><span class="skill-icon">🔵</span><span class="skill-name">Go</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--fill: 65%"></div>
+                </div>
+              </div>
+              <div class="skill-item" id="skill-cpp"><span class="skill-icon">⚙️</span><span
+                  class="skill-name">C++</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--fill: 70%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category glass-card" id="skill-frameworks">
+            <div class="skill-category-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path
+                  d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
+                <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
+                <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
+              </svg>
+              <h3>Frameworks &amp; Libraries</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-item" id="skill-react"><span class="skill-icon">⚛️</span><span
+                  class="skill-name">React</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--fill: 82%"></div>
+                </div>
+              </div>
+              <div class="skill-item" id="skill-nodejs"><span class="skill-icon">🟢</span><span
+                  class="skill-name">Node.js</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--fill: 78%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category glass-card" id="skill-cloud">
+            <div class="skill-category-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z" />
+              </svg>
+              <h3>Cloud &amp; DevOps</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-item" id="skill-aws"><span class="skill-icon">☁️</span><span
+                  class="skill-name">AWS</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--fill: 72%"></div>
+                </div>
+              </div>
+              <div class="skill-item" id="skill-docker"><span class="skill-icon">🐳</span><span
+                  class="skill-name">Docker</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--fill: 68%"></div>
+                </div>
+              </div>
+              <div class="skill-item" id="skill-git"><span class="skill-icon">🔀</span><span class="skill-name">Git /
+                  GitHub</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--fill: 88%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category glass-card" id="skill-ai">
+            <div class="skill-category-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4z" />
+                <path d="M12 8v4" />
+                <circle cx="12" cy="16" r="4" />
+                <path d="M2 12h4m12 0h4" />
+              </svg>
+              <h3>Machine Learning &amp; AI</h3>
+            </div>
+            <div class="skill-items">
+              <div class="skill-item" id="skill-ml"><span class="skill-icon">🤖</span><span class="skill-name">Machine
+                  Learning</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--fill: 70%"></div>
+                </div>
+              </div>
+              <div class="skill-item" id="skill-numpy"><span class="skill-icon">📊</span><span class="skill-name">NumPy
+                  / Pandas / Scikit</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--fill: 75%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects-section" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">04 — Projects</span>
+          <h2 class="section-title" id="projects-heading">What I've Built</h2>
+        </div>
+        <div class="projects-grid" id="projects-grid">
+          <article class="project-card glass-card featured" id="project-sharpforge">
+            <div class="project-card-header">
+              <div class="project-icon">⚒️</div>
+              <div class="project-links">
+                <a href="https://github.com/chapulin/SharpForge" target="_blank" rel="noopener" class="project-link"
+                  id="project-sharpforge-github" aria-label="SharpForge GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-featured-badge">Featured</div>
+            <h3 class="project-title" id="project-sharpforge-title">SharpForge</h3>
+            <p class="project-description" id="project-sharpforge-desc">
+              A robust ETL (Extract, Transform, Load) pipeline project built with Java and Maven.
+              Designed for scalable data processing workflows, featuring modular architecture
+              and efficient data transformation capabilities.
+            </p>
+            <div class="project-tech" id="project-sharpforge-tech">
+              <span class="tech-tag">Java</span><span class="tech-tag">Maven</span><span
+                class="tech-tag">ETL</span><span class="tech-tag">Data Pipeline</span>
+            </div>
+          </article>
+
+          <article class="project-card glass-card" id="project-ml">
+            <div class="project-card-header">
+              <div class="project-icon">🤖</div>
+              <div class="project-links">
+                <a href="https://github.com/chapulin" target="_blank" rel="noopener" class="project-link"
+                  id="project-ml-github" aria-label="ML Project GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title" id="project-ml-title">ML Prediction Engine</h3>
+            <p class="project-description" id="project-ml-desc">
+              A machine learning pipeline built with Python, Scikit-learn, and Pandas.
+              Implements multiple classification and regression models with automated
+              hyperparameter tuning and performance evaluation.
+            </p>
+            <div class="project-tech" id="project-ml-tech">
+              <span class="tech-tag">Python</span><span class="tech-tag">Scikit-learn</span><span
+                class="tech-tag">Pandas</span><span class="tech-tag">NumPy</span>
+            </div>
+          </article>
+
+          <article class="project-card glass-card" id="project-api">
+            <div class="project-card-header">
+              <div class="project-icon">🌐</div>
+              <div class="project-links">
+                <a href="https://github.com/chapulin" target="_blank" rel="noopener" class="project-link"
+                  id="project-api-github" aria-label="API Project GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title" id="project-api-title">RESTful API Service</h3>
+            <p class="project-description" id="project-api-desc">
+              Scalable REST API built with Node.js and deployed on AWS. Features JWT
+              authentication, rate limiting, PostgreSQL integration, and automated
+              testing with full CI/CD pipeline via GitHub Actions.
+            </p>
+            <div class="project-tech" id="project-api-tech">
+              <span class="tech-tag">Node.js</span><span class="tech-tag">AWS</span><span
+                class="tech-tag">PostgreSQL</span><span class="tech-tag">Docker</span>
+            </div>
+          </article>
+
+          <article class="project-card glass-card" id="project-cpp">
+            <div class="project-card-header">
+              <div class="project-icon">⚡</div>
+              <div class="project-links">
+                <a href="https://github.com/chapulin" target="_blank" rel="noopener" class="project-link"
+                  id="project-cpp-github" aria-label="C++ Project GitHub">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-title" id="project-cpp-title">Algorithms Visualizer</h3>
+            <p class="project-description" id="project-cpp-desc">
+              A high-performance algorithm visualization tool built in C++. Demonstrates
+              sorting algorithms, graph traversal (BFS/DFS), pathfinding (A*), and
+              dynamic programming with real-time visual output.
+            </p>
+            <div class="project-tech" id="project-cpp-tech">
+              <span class="tech-tag">C++</span><span class="tech-tag">Algorithms</span><span class="tech-tag">Data
+                Structures</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="projects-footer" id="projects-footer">
+          <a href="https://github.com/chapulin" target="_blank" rel="noopener" class="btn btn-outline"
+            id="btn-view-all-projects">
+            View All Projects on GitHub
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">05 — Contact</span>
+          <h2 class="section-title" id="contact-heading">Let's Connect</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info" id="contact-info">
+            <p class="contact-tagline">
+              I'm always open to new opportunities, collaborations, and interesting conversations.
+              Whether you have a project in mind or just want to say hello — my inbox is open!
+            </p>
+            <div class="contact-links" id="contact-links">
+              <a href="mailto:lq1569je@go.minnstate.edu" class="contact-link-item" id="contact-email-link">
+                <div class="contact-link-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact-link-label">Email</span>
+                  <span class="contact-link-value">lq1569je@go.minnstate.edu</span>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/gilberto-ojeda-campos-2293a52b2/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3Bx3jQGfmXRZymCxBdnnLMGg%3D%3D"
+                target="_blank" rel="noopener" class="contact-link-item" id="contact-linkedin-link">
+                <div class="contact-link-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact-link-label">LinkedIn</span>
+                  <span class="contact-link-value">linkedin.com/in/gilberto-ojeda-campos</span>
+                </div>
+              </a>
+              <a href="https://github.com/chapulin" target="_blank" rel="noopener" class="contact-link-item"
+                id="contact-github-link">
+                <div class="contact-link-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact-link-label">GitHub</span>
+                  <span class="contact-link-value">github.com/chapulin</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form glass-card" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name-input" class="form-label">Name</label>
+              <input type="text" id="contact-name-input" name="name" class="form-input" placeholder="Your name" required
+                autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="contact-email-input" class="form-label">Email</label>
+              <input type="email" id="contact-email-input" name="email" class="form-input" placeholder="your@email.com"
+                required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="contact-message-input" class="form-label">Message</label>
+              <textarea id="contact-message-input" name="message" class="form-input form-textarea"
+                placeholder="Tell me about your project or just say hi!" required rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit" id="contact-submit-btn">
+              Send Message
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m22 2-7 20-4-9-9-4Z" />
+                <path d="M22 2 11 13" />
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-text" id="footer-text">
+          Designed &amp; built by <strong>Gilberto Ojeda</strong> — <span id="footer-year"></span>
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/chapulin" target="_blank" rel="noopener" class="footer-link"
+            id="footer-github">GitHub</a>
+          <a href="https://linkedin.com/in/gilbertoojeda" target="_blank" rel="noopener" class="footer-link"
+            id="footer-linkedin">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
