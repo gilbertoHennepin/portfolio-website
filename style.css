@@ -125,7 +125,7 @@ textarea {
 .nav-container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 1.1rem 2rem;
+  padding: 1.3rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -142,8 +142,8 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   background: linear-gradient(135deg, #1c1f24, #2b2d32);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 10px;
@@ -185,10 +185,11 @@ textarea {
 .nav-brand-name {
   color: var(--text);
   white-space: nowrap;
+  font-size: 1.1rem;
 }
 
 .nav-brand-subtitle {
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 500;
   color: var(--text-2);
   white-space: nowrap;
@@ -318,13 +319,13 @@ textarea {
 
 /* ─── HERO ─── */
 .hero-section {
-  min-height: 100vh;
+  min-height: 105vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 7rem 2rem 4rem;
+  padding: 8rem 2rem 4.5rem;
   position: relative;
   z-index: 1;
 }
@@ -333,8 +334,8 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  max-width: 700px;
+  gap: 1.15rem;
+  max-width: 760px;
 }
 
 .hero-intro-copy {
@@ -380,9 +381,9 @@ textarea {
 
 .hero-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(3.2rem, 10vw, 7rem);
+  font-size: clamp(3.8rem, 10vw, 8rem);
   font-weight: 800;
-  line-height: 0.95;
+  line-height: 0.92;
   letter-spacing: -0.02em;
   color: var(--text);
 }
@@ -395,24 +396,24 @@ textarea {
 }
 
 .hero-subtitle {
-  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-size: clamp(1.25rem, 2.8vw, 1.6rem);
   font-weight: 600;
   color: var(--text-2);
   margin-top: 0.2rem;
 }
 
 .hero-tagline {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--amber);
   font-weight: 500;
   margin-top: 0;
 }
 
 .hero-description {
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   color: var(--text-2);
-  max-width: 520px;
-  line-height: 1.7;
+  max-width: 560px;
+  line-height: 1.75;
 }
 
 .hero-description em {
