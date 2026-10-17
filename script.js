@@ -103,6 +103,51 @@
 })();
 
 // ══════════════════════════════════════════
+// CUSTOM CURSOR
+// ══════════════════════════════════════════
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorRing = document.querySelector('.cursor-ring');
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+let ringX = mouseX;
+let ringY = mouseY;
+
+const interactiveTargets = 'a, button, input, textarea, .glass-card, .project-card, .skill-category, .timeline-item';
+
+window.addEventListener('pointermove', (event) => {
+  mouseX = event.clientX;
+  mouseY = event.clientY;
+  cursorDot.style.opacity = '1';
+  cursorRing.style.opacity = '1';
+});
+
+function animateCursor() {
+  ringX += (mouseX - ringX) * 0.16;
+  ringY += (mouseY - ringY) * 0.16;
+
+  cursorDot.style.left = `${mouseX}px`;
+  cursorDot.style.top = `${mouseY}px`;
+  cursorRing.style.left = `${ringX}px`;
+  cursorRing.style.top = `${ringY}px`;
+
+  requestAnimationFrame(animateCursor);
+}
+
+animateCursor();
+
+document.querySelectorAll(interactiveTargets).forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursorRing.classList.add('is-hovering');
+    cursorDot.classList.add('is-hovering');
+  });
+
+  el.addEventListener('mouseleave', () => {
+    cursorRing.classList.remove('is-hovering');
+    cursorDot.classList.remove('is-hovering');
+  });
+});
+
+// ══════════════════════════════════════════
 // HELPERS
 // ══════════════════════════════════════════
 function scrollToSection(id) {
