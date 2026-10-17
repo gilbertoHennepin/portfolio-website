@@ -111,41 +111,53 @@ let mouseX = window.innerWidth / 2;
 let mouseY = window.innerHeight / 2;
 let ringX = mouseX;
 let ringY = mouseY;
+const supportsFinePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
 
-const interactiveTargets = 'a, button, input, textarea, .glass-card, .project-card, .skill-category, .timeline-item';
+if (cursorDot && cursorRing && supportsFinePointer) {
+  const interactiveTargets = 'a, button, input, textarea, .glass-card, .project-card, .skill-category, .timeline-item';
 
-window.addEventListener('pointermove', (event) => {
-  mouseX = event.clientX;
-  mouseY = event.clientY;
-  cursorDot.style.opacity = '1';
-  cursorRing.style.opacity = '1';
-});
+  function updateCursorPosition(event) {
+    const x = event.clientX ?? mouseX;
+    const y = event.clientY ?? mouseY;
+    mouseX = x;
+    mouseY = y;
+    cursorDot.style.opacity = '1';
+    cursorRing.style.opacity = '1';
+  }
 
-function animateCursor() {
-  ringX += (mouseX - ringX) * 0.16;
-  ringY += (mouseY - ringY) * 0.16;
+  window.addEventListener('pointermove', updateCursorPosition, { passive: true });
+  window.addEventListener('mousemove', updateCursorPosition, { passive: true });
+  window.addEventListener('mouseleave', () => {
+    cursorDot.style.opacity = '0';
+    cursorRing.style.opacity = '0';
+  });
 
-  cursorDot.style.left = `${mouseX}px`;
-  cursorDot.style.top = `${mouseY}px`;
-  cursorRing.style.left = `${ringX}px`;
-  cursorRing.style.top = `${ringY}px`;
+  function animateCursor() {
+    ringX += (mouseX - ringX) * 0.16;
+    ringY += (mouseY - ringY) * 0.16;
 
-  requestAnimationFrame(animateCursor);
+    cursorDot.style.left = `${mouseX}px`;
+    cursorDot.style.top = `${mouseY}px`;
+    cursorRing.style.left = `${ringX}px`;
+    cursorRing.style.top = `${ringY}px`;
+
+    requestAnimationFrame(animateCursor);
+  }
+
+  animateCursor();
+
+  document.querySelectorAll(interactiveTargets).forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursorRing.classList.add('is-hovering');
+      cursorDot.classList.add('is-hovering');
+    });
+
+    el.addEventListener('mouseleave', () => {
+      cursorRing.classList.remove('is-hovering');
+      cursorDot.classList.remove('is-hovering');
+    });
+  });
 }
-
-animateCursor();
-
-document.querySelectorAll(interactiveTargets).forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursorRing.classList.add('is-hovering');
-    cursorDot.classList.add('is-hovering');
-  });
-
-  el.addEventListener('mouseleave', () => {
-    cursorRing.classList.remove('is-hovering');
-    cursorDot.classList.remove('is-hovering');
-  });
-});
 
 // ══════════════════════════════════════════
 // HELPERS
