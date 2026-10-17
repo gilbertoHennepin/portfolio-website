@@ -144,14 +144,23 @@ textarea {
   justify-content: center;
   width: 42px;
   height: 42px;
-  background: linear-gradient(135deg, var(--amber), var(--orange));
+  background: linear-gradient(135deg, #1c1f24, #2b2d32);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 10px;
+  overflow: hidden;
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .nav-logo:hover {
   transform: scale(1.08);
   box-shadow: 0 0 20px var(--amber-glow);
+}
+
+.nav-logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .logo-text {
