@@ -142,8 +142,8 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
+  width: 64px;
+  height: 64px;
   background: linear-gradient(135deg, #1c1f24, #2b2d32);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 10px;
