@@ -1,7 +1,6 @@
 # Gilberto Ojeda — Portfolio Website
 
-A personal portfolio website built with vanilla HTML, CSS, and JavaScript.
-Deployed via **GitHub Pages**.
+A personal portfolio website designed to showcase software engineering projects, experience, and technical skills in a modern, dark-themed layout. The site presents a concise professional story, highlights major projects, and includes direct links to GitHub, LinkedIn, and email contact information.
 
 ## 🌐 Live Site
 
@@ -9,21 +8,27 @@ Deployed via **GitHub Pages**.
 
 ## ✨ Features
 
-- Animated particle canvas background with mouse interaction
-- Dark mode with warm amber/orange accents
-- Glassmorphism UI cards
-- Smooth scroll-reveal animations
-- Responsive for mobile, tablet, and desktop
-- Sections: Hero, About, Experience, Skills, Projects, Contact
-- Accessible markup with ARIA labels and semantic HTML
+- Animated particle background and interactive cursor effects
+- Warm amber/orange visual system with glassmorphism cards
+- Responsive single-page layout for desktop and mobile
+- Sections for hero, journey, experience, skills, projects, and contact
+- Project cards with GitHub links and hover interactions
+- Accessible semantic HTML and ARIA labeling
 
-## 🛠 Tech Stack
+## 🧩 Languages & Frameworks Used
 
-HTML · CSS (Vanilla) · JavaScript (Vanilla) · GitHub Pages
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- GitHub Pages for deployment
+
+## 🛠 Development Notes
+
+This project is a static website built without a framework or build system. Styling and interactivity are implemented directly in HTML, CSS, and JavaScript to keep the site lightweight and easy to deploy.
 
 ## 🚀 Deploy
 
-This site deploys automatically to GitHub Pages from the `main` branch.
+This site deploys automatically via GitHub Pages from the `main` branch.
 
 To deploy manually:
 1. Push to `main`
