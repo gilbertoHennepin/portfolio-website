@@ -1028,6 +1028,7 @@ textarea {
   padding: 1.75rem;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background var(--transition);
 }
 
@@ -1064,6 +1065,17 @@ textarea {
 
 .project-icon {
   font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-logo {
+  width: 2.1rem;
+  height: 2.1rem;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.15));
 }
 
 .project-links {

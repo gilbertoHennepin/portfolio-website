@@ -160,6 +160,31 @@ if (cursorDot && cursorRing && supportsFinePointer) {
 }
 
 // ══════════════════════════════════════════
+// PROJECT CARD LINKS
+// ══════════════════════════════════════════
+const projectCardLinks = document.querySelectorAll('.project-card-link');
+
+projectCardLinks.forEach(card => {
+  const url = card.dataset.projectUrl;
+  if (!url) return;
+
+  const openProject = (event) => {
+    if (event && event.target && event.target.closest('a')) {
+      return;
+    }
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  card.addEventListener('click', openProject);
+  card.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      openProject(event);
+    }
+  });
+});
+
+// ══════════════════════════════════════════
 // HELPERS
 // ══════════════════════════════════════════
 function scrollToSection(id) {
