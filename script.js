@@ -189,8 +189,23 @@ projectCardLinks.forEach(card => {
 // ══════════════════════════════════════════
 function scrollToSection(id) {
   const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth' });
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+
+function scrollToHash() {
+  const hash = window.location.hash;
+  if (!hash) return;
+
+  const target = document.querySelector(hash);
+  if (!target) return;
+
+  requestAnimationFrame(() => {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
+
+window.addEventListener('load', scrollToHash);
+window.addEventListener('hashchange', scrollToHash);
 
 // Footer year
 document.getElementById('footer-year').textContent = new Date().getFullYear();
