@@ -207,6 +207,16 @@ function scrollToHash() {
 window.addEventListener('load', scrollToHash);
 window.addEventListener('hashchange', scrollToHash);
 
+const params = new URLSearchParams(window.location.search);
+if (params.get('projects') === '1') {
+  const projects = document.getElementById('projects');
+  if (projects) {
+    requestAnimationFrame(() => {
+      projects.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+}
+
 // Footer year
 document.getElementById('footer-year').textContent = new Date().getFullYear();
 
