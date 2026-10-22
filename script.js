@@ -164,6 +164,15 @@ if (cursorDot && cursorRing && supportsFinePointer) {
 // ══════════════════════════════════════════
 const projectCardLinks = document.querySelectorAll('.project-card-link');
 
+// Make the hover glow follow the cursor across each project card
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('pointermove', (event) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--glow-x', `${event.clientX - rect.left}px`);
+    card.style.setProperty('--glow-y', `${event.clientY - rect.top}px`);
+  }, { passive: true });
+});
+
 projectCardLinks.forEach(card => {
   const url = card.dataset.projectUrl;
   if (!url) return;
