@@ -1045,7 +1045,7 @@ textarea {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at top left, rgba(245, 158, 11, 0.26), transparent 58%);
+  background: radial-gradient(circle 280px at var(--glow-x, 50%) var(--glow-y, 50%), rgba(245, 158, 11, 0.26), transparent 70%);
   opacity: 0;
   transition: opacity var(--transition);
 }
@@ -1088,6 +1088,7 @@ textarea {
 }
 
 .project-link {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1105,6 +1106,30 @@ textarea {
   border-color: rgba(245, 158, 11, 0.5);
   background: rgba(245, 158, 11, 0.1);
   box-shadow: 0 0 18px rgba(245, 158, 11, 0.2);
+}
+
+/* Tooltip shown below the icon on hover/focus */
+.project-link::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  padding: 0.35rem 0.6rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border-2);
+  border-radius: 6px;
+  color: var(--text);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition);
+  z-index: 2;
+}
+
+.project-link:hover::after,
+.project-link:focus-visible::after {
+  opacity: 1;
 }
 
 .project-featured-badge {
