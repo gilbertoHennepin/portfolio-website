@@ -2,7 +2,7 @@
 
 A personal portfolio website designed to showcase software engineering projects, experience, and technical skills in a modern, dark-themed layout. The site presents a concise professional story, highlights major projects, and includes direct links to GitHub, LinkedIn, and email contact information.
 
-## 🌐 Live Site
+## Live Site
 
 [https://chapulin.github.io/portfolio-website](https://chapulin.github.io/portfolio-website)
 
