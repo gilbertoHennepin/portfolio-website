@@ -114,7 +114,7 @@ let ringY = mouseY;
 const supportsFinePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
 
 if (cursorDot && cursorRing && supportsFinePointer) {
-  const interactiveTargets = 'a, button, input, textarea, .glass-card, .project-card, .skill-category, .timeline-item';
+  const interactiveTargets = 'a, button, input, textarea, .glass-card, .project-card, .timeline-item';
 
   function updateCursorPosition(event) {
     const x = event.clientX ?? mouseX;
@@ -293,7 +293,7 @@ mobileNavLinks.forEach(link => {
 // SCROLL REVEAL
 // ══════════════════════════════════════════
 const revealEls = document.querySelectorAll(
-  '.timeline-item, .skill-category, .project-card, .about-text, .about-visual, .contact-info, .contact-form'
+  '.timeline-item, .project-card, .contact-info, .contact-form'
 );
 
 revealEls.forEach(el => el.classList.add('reveal'));
@@ -308,21 +308,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 revealEls.forEach(el => revealObserver.observe(el));
-
-// ══════════════════════════════════════════
-// SKILL BARS ANIMATION
-// ══════════════════════════════════════════
-const skillFills = document.querySelectorAll('.skill-fill');
-const skillObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('animated'), 200);
-      skillObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.3 });
-
-skillFills.forEach(fill => skillObserver.observe(fill));
 
 // ══════════════════════════════════════════
 // CONTACT FORM

@@ -41,9 +41,7 @@
         </div>
       </div>
       <ul class="nav-links" role="list">
-        <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
         <li><a href="#experience" class="nav-link" id="nav-experience">Experience</a></li>
-        <li><a href="#skills" class="nav-link" id="nav-skills">Skills</a></li>
         <li><a href="#projects" class="nav-link" id="nav-projects">Projects</a></li>
         <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
       </ul>
@@ -58,9 +56,7 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
     <ul role="list">
-      <li><a href="#about" class="mobile-nav-link" id="mobile-nav-about">About</a></li>
       <li><a href="#experience" class="mobile-nav-link" id="mobile-nav-experience">Experience</a></li>
-      <li><a href="#skills" class="mobile-nav-link" id="mobile-nav-skills">Skills</a></li>
       <li><a href="#projects" class="mobile-nav-link" id="mobile-nav-projects">Projects</a></li>
       <li><a href="#contact" class="mobile-nav-link" id="mobile-nav-contact">Contact</a></li>
     </ul>
@@ -332,14 +328,6 @@
           <a href="#contact" class="btn btn-outline" id="hero-btn-contact">Get In Touch</a>
         </div>
         <div class="hero-quick-links animate-fade-up delay-5" id="hero-quick-links">
-          <button class="quick-btn" id="quick-about" onclick="scrollToSection('about')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="8" r="5" />
-              <path d="M20 21a8 8 0 1 0-16 0" />
-            </svg>
-            <span>About</span>
-          </button>
           <button class="quick-btn" id="quick-projects" onclick="scrollToSection('projects')">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -347,13 +335,6 @@
               <path d="M8 21h8m-4-4v4" />
             </svg>
             <span>Projects</span>
-          </button>
-          <button class="quick-btn" id="quick-skills" onclick="scrollToSection('skills')">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
-            </svg>
-            <span>Skills</span>
           </button>
           <button class="quick-btn" id="quick-experience" onclick="scrollToSection('experience')">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -394,192 +375,6 @@
       </div>
       <div class="scroll-indicator" id="scroll-indicator" aria-hidden="true">
         <div class="scroll-dot"></div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section about-section" aria-labelledby="about-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">01 — About</span>
-          <h2 class="section-title" id="about-heading">Who I Am</h2>
-        </div>
-        <div class="about-grid">
-          <div class="about-text">
-            <p class="about-paragraph" id="about-p1">
-              Hey! I'm <strong>Gilberto Ojeda</strong>, a Software Engineering student at
-              <strong>Western Governors University</strong>. I have a deep passion for building
-              well-engineered software that solves real problems — from backend APIs to
-              machine learning pipelines.
-            </p>
-            <p class="about-paragraph" id="about-p2">
-              I thrive at the intersection of systems thinking and creative problem-solving.
-              Whether it's architecting cloud infrastructure on <strong>AWS</strong>,
-              writing performant <strong>C++</strong> algorithms, or building intelligent
-              ML models, I love learning and shipping things that matter.
-            </p>
-            <p class="about-paragraph" id="about-p3">
-              When I'm not coding, you'll find me exploring new technologies, contributing
-              to open-source projects, or diving deep into computer science fundamentals.
-            </p>
-            <div class="about-stats" id="about-stats">
-              <div class="stat-item"><span class="stat-number">10+</span><span class="stat-label">Projects</span></div>
-              <div class="stat-item"><span class="stat-number">8+</span><span class="stat-label">Technologies</span>
-              </div>
-              <div class="stat-item"><span class="stat-number">WGU</span><span class="stat-label">Student</span></div>
-            </div>
-          </div>
-          <div class="about-visual" id="about-visual">
-            <div class="about-card glass-card">
-              <div class="about-avatar" id="about-avatar">GO</div>
-              <div class="about-info">
-                <h3>Gilberto Ojeda</h3>
-                <p>Software Engineering Student</p>
-                <p class="about-school">Western Governors University</p>
-              </div>
-              <div class="about-tags">
-                <span class="tag">Problem Solver</span>
-                <span class="tag">Systems Thinker</span>
-                <span class="tag">Open Source</span>
-                <span class="tag">Cloud Native</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section skills-section" aria-labelledby="skills-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">03 — Skills</span>
-          <h2 class="section-title" id="skills-heading">Tech Stack</h2>
-        </div>
-        <div class="skills-grid" id="skills-grid">
-          <div class="skill-category glass-card" id="skill-languages">
-            <div class="skill-category-header">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
-              <h3>Languages</h3>
-            </div>
-            <div class="skill-items">
-              <div class="skill-item" id="skill-python"><span class="skill-icon">🐍</span><span
-                  class="skill-name">Python</span>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--fill: 90%"></div>
-                </div>
-              </div>
-              <div class="skill-item" id="skill-java"><span class="skill-icon">☕</span><span
-                  class="skill-name">Java</span>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--fill: 80%"></div>
-                </div>
-              </div>
-              <div class="skill-item" id="skill-javascript"><span class="skill-icon">📜</span><span
-                  class="skill-name">JavaScript / TypeScript</span>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--fill: 85%"></div>
-                </div>
-              </div>
-              <div class="skill-item" id="skill-go"><span class="skill-icon">🔵</span><span class="skill-name">Go</span>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--fill: 65%"></div>
-                </div>
-              </div>
-              <div class="skill-item" id="skill-cpp"><span class="skill-icon">⚙️</span><span
-                  class="skill-name">C++</span>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--fill: 70%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="skill-category glass-card" id="skill-frameworks">
-            <div class="skill-category-header">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
-                <path
-                  d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z" />
-                <path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12" />
-                <path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17" />
-              </svg>
-              <h3>Frameworks &amp; Libraries</h3>
-            </div>
-            <div class="skill-items">
-              <div class="skill-item" id="skill-react"><span class="skill-icon">⚛️</span><span
-                  class="skill-name">React</span>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--fill: 82%"></div>
-                </div>
-              </div>
-              <div class="skill-item" id="skill-nodejs"><span class="skill-icon">🟢</span><span
-                  class="skill-name">Node.js</span>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--fill: 78%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="skill-category glass-card" id="skill-cloud">
-            <div class="skill-category-header">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
-                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z" />
-              </svg>
-              <h3>Cloud &amp; DevOps</h3>
-            </div>
-            <div class="skill-items">
-              <div class="skill-item" id="skill-aws"><span class="skill-icon">☁️</span><span
-                  class="skill-name">AWS</span>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--fill: 72%"></div>
-                </div>
-              </div>
-              <div class="skill-item" id="skill-docker"><span class="skill-icon">🐳</span><span
-                  class="skill-name">Docker</span>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--fill: 68%"></div>
-                </div>
-              </div>
-              <div class="skill-item" id="skill-git"><span class="skill-icon">🔀</span><span class="skill-name">Git /
-                  GitHub</span>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--fill: 88%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="skill-category glass-card" id="skill-ai">
-            <div class="skill-category-header">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
-                <path d="M12 2a4 4 0 0 1 4 4v2H8V6a4 4 0 0 1 4-4z" />
-                <path d="M12 8v4" />
-                <circle cx="12" cy="16" r="4" />
-                <path d="M2 12h4m12 0h4" />
-              </svg>
-              <h3>Machine Learning &amp; AI</h3>
-            </div>
-            <div class="skill-items">
-              <div class="skill-item" id="skill-ml"><span class="skill-icon">🤖</span><span class="skill-name">Machine
-                  Learning</span>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--fill: 70%"></div>
-                </div>
-              </div>
-              <div class="skill-item" id="skill-numpy"><span class="skill-icon">📊</span><span class="skill-name">NumPy
-                  / Pandas / Scikit</span>
-                <div class="skill-bar">
-                  <div class="skill-fill" style="--fill: 75%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
