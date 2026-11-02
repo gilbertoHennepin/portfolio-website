@@ -390,6 +390,42 @@ textarea {
   transform: translateY(0);
 }
 
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--amber), var(--orange));
+  color: #000;
+  box-shadow: 0 4px 24px rgba(245, 158, 11, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.4);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--border-2);
+  color: var(--text-2);
+  background: var(--surface);
+}
+
+.btn-outline:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  background: var(--amber-glow2);
+}
+
 /* ─── TAGS ─── */
 .tag {
   padding: 0.3rem 0.8rem;
